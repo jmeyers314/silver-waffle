@@ -100,3 +100,9 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     make_movie(args)
+
+
+# Some extra tricks to convert to gifs:
+# ffmpeg -i PSF_size_error.mp4 -filter_complex "[0:v] palettegen" pallete.png
+# ffmpeg -i PSF_size_error.mp4 -i pallete.png -filter_complex "[0:v][1:v] paletteuse" PSF_size_error.gif
+# ffmpeg -i PSF_ellip_error.mp4 -i pallete.png -filter_complex "[0:v][1:v] paletteuse" PSF_ellip_error.gif
